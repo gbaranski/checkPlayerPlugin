@@ -1,8 +1,14 @@
 name: checkPlayerPlugin
-main: com.gbaranski.checkPlayerPlugin.checkPlayerPlugin
+main: com.gbaranski.checkPlayerPlugin.CheckPlayerPlugin
 version: 1.0
 
 commands:
-  sprawdz:
+  sprawdzanie:
     description: Sprawdzanie graczy
     usage: /<command>
+  sprawdz:
+    description: Teleportuje gracza w celu sprawdzenia
+    usage: /<command> <nick>
+  czysty:
+    description: Oznacza gracza jako czysty
+    usage: /<command> <nick>
