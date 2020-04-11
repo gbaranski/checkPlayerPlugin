@@ -12,3 +12,6 @@ commands:
   czysty:
     description: Oznacza gracza jako czysty
     usage: /<command> <nick>
+  przyznajesie:
+    description: Uzyj kiedy chcesz sie przyznac do cheatowania
+    usage: /<command>
