@@ -7,19 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b9c0ef4-b0d2-4d29-b977-e4f58ce0c2a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/iDoCheatCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckPlayerCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckPlayerPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/CheckPlayerPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/ClearPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/ClearPlayerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/iDoCheatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbaranski/checkPlayerPlugin/iDoCheatCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/CheckCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/CheckCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/PrepareListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/PrepareListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/checkPlayerPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/checkPlayerPlugin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/iDoCheatCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gbaranski/checkPlayerPlugin/iDoCheatCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,8 @@
       <workItem from="1586094584532" duration="18012000" />
       <workItem from="1586156076122" duration="2667000" />
       <workItem from="1586544585790" duration="9199000" />
-      <workItem from="1586600334738" duration="7294000" />
+      <workItem from="1586600334738" duration="11381000" />
+      <workItem from="1586636217093" duration="4231000" />
     </task>
     <task id="LOCAL-00001" summary="Everything working, need small fixes">
       <created>1586120432376</created>
@@ -166,10 +164,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="408" y="268" key="caller.chooser.dialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1586102543800" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586601716353">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586636216789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1586601716353" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1586636216789" />
     <state x="726" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586101113138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -178,10 +176,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" width="540" height="496" key="extract.method.dialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1586550677174" />
-    <state x="666" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1585509883054">
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1586636939834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="148" key="refactoring.ChangeSignatureDialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1585509883054" />
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog/1920.125.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1586636939834" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1586101780980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

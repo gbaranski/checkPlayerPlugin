@@ -18,8 +18,8 @@ public class iDoCheatCommand implements CommandExecutor {
             if(CheckPlayerPlugin.checkIfPlayerInArray(player)) {
                 if(playersWantsBan.contains(player)) {
                     CheckPlayerPlugin.removePlayerFromArray(player);
-                    CheckPlayerPlugin.banPlayer(player, CheckPlayerPlugin.getInstance().getConfig().getString("AdmissionBanReason"));
-                    Bukkit.broadcastMessage(CheckPlayerPlugin.getInstance().getConfig().getString("AdmissionBanBroadcast"));
+                    CheckPlayerPlugin.banPlayer(player, CheckPlayerPlugin.getInstance().getConfig().getString("AdmissionBanReason"), CheckPlayerPlugin.getInstance().getConfig().getString("BanAdmission"));
+                    CheckPlayerPlugin.broadcastToAll(String.format(CheckPlayerPlugin.getInstance().getConfig().getString("AdmissionBanBroadcast"), player.getName()));
                     playersWantsBan.remove(player);
                 }
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("AreYouSureMessage")));

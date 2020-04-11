@@ -23,12 +23,14 @@ public class CheckPlayerPlugin extends JavaPlugin {
     }
 
     public static void sendToJail(Player targetObject, Player senderObject) {
+        CheckPlayerPlugin.broadcastToAll(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastOnCheck"), targetObject.getName(), senderObject.getName())));
+        targetObject.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("LineSeparator")));
         targetObject.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("MessageForPlayerToCheck")));
+        targetObject.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("LineSeparator")));
         targetObject.teleport(new Location(Bukkit.getWorld("world"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("jailX"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("jailY"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("jailZ")));
-        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastOnCheck"), targetObject.getName(), senderObject.getName())));
         CheckPlayerPlugin.playersDuringCheck.add(targetObject);
     }
 
@@ -69,26 +71,26 @@ public class CheckPlayerPlugin extends JavaPlugin {
         playersDuringCheck.remove(targetObject);
     }
 
-    public static void broadcastArrayPlayers(Player sender) {
+    public static void printArrayOfPlayersDuringCheck(Player sender) {
         for (Player player : playersDuringCheck) {
             sender.sendMessage(player.getPlayer().getName());
         }
     }
 
-    public static void banPlayer(Player targetObject, String banReason) {
-        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastOnBan"), targetObject.getName(), banReason)));
+    public static void banPlayer(Player targetObject, String banReason, String banTime) {
+        CheckPlayerPlugin.broadcastToAll(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastOnBan"), targetObject.getName(), banReason)));
         targetObject.teleport(new Location(Bukkit.getWorld("world"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("spawnX"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("spawnY"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("spawnZ")));
         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-        String commandToExecute = "ban " + targetObject.getName() + " " + banReason;
+        String commandToExecute = "ban " + targetObject.getName() + " " + banTime + " " + banReason;
         Bukkit.dispatchCommand(console, commandToExecute);
         playersDuringCheck.remove(targetObject);
     }
 
     public static void clearPlayer(Player targetPlayer, Player sender) {
-        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastClearPlayer"), targetPlayer.getName(), sender.getName())));
+        CheckPlayerPlugin.broadcastToAll(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("BroadcastClearPlayer"), targetPlayer.getName(), sender.getName())));
         targetPlayer.teleport(new Location(Bukkit.getWorld("world"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("spawnX"),
                 CheckPlayerPlugin.getInstance().getConfig().getInt("spawnY"),
@@ -96,11 +98,16 @@ public class CheckPlayerPlugin extends JavaPlugin {
         playersDuringCheck.remove(targetPlayer);
     }
 
+    public static void broadcastToAll(String message) {
+        for (Player targetPlayer : Bukkit.getOnlinePlayers()) {
+            targetPlayer.sendMessage(message);
+        }
+    }
+
     public void onEnable() {
         instance = this;
         CheckPlayerPlugin.getInstance().getConfig().options().copyDefaults(true);
         CheckPlayerPlugin.getInstance().saveDefaultConfig();
-
         this.getCommand("sprawdzanie").setExecutor(new CheckCommand());
         this.getCommand("sprawdz").setExecutor(new CheckPlayerCommand());
         this.getCommand("czysty").setExecutor(new ClearPlayerCommand());
@@ -117,8 +124,8 @@ class PrepareListener implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent eventObject) {
         if (CheckPlayerPlugin.checkIfPlayerInArray(eventObject.getPlayer())) {
-            CheckPlayerPlugin.banPlayer(eventObject.getPlayer(), CheckPlayerPlugin.getInstance().getConfig().getString("OnLeaveBanReason"));
-            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("OnLeaveBanBroadcast"), eventObject.getPlayer().getName())));
+            CheckPlayerPlugin.banPlayer(eventObject.getPlayer(), CheckPlayerPlugin.getInstance().getConfig().getString("OnLeaveBanReason"), CheckPlayerPlugin.getInstance().getConfig().getString("BanLogout"));
+            CheckPlayerPlugin.broadcastToAll(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("OnLeaveBanBroadcast"), eventObject.getPlayer().getName())));
         }
     }
     @EventHandler

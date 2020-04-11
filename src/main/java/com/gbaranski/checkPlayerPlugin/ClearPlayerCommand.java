@@ -17,6 +17,10 @@ public class ClearPlayerCommand implements CommandExecutor {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', CheckPlayerPlugin.getInstance().getConfig().getString("CheckMoreCommandMessage")));
                 } else {
                     Player targetPlayer = Bukkit.getPlayer(args[0]);
+                    if(!CheckPlayerPlugin.checkIfPlayerInArray(targetPlayer)) {
+                        player.sendMessage(String.format(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("PlayerNotDuringCheck")), player.getName()));
+                        return true;
+                    }
                     if (targetPlayer == null) {
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', CheckPlayerPlugin.getInstance().getConfig().getString("PlayerDoesntExistMessage")));
                         return true;

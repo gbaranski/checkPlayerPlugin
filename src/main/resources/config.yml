@@ -4,20 +4,24 @@ jailZ: 50
 spawnX: 0
 spawnY: 100
 spawnZ: 0
-MessageForPlayerToCheck: '&cJestes sprawdzany'
-BroadcastOnCheck: '&cGracz &a&l%s jest sprawdzany przez &a&l%s'
-BroadcastOnBan: '&cGracz &a&l%s zostal zbanowny za &4%s'
-BroadcastClearPlayer: '&cGracz &a&l%s zostal uznany jako czysty przez &l&a%s'
+BanAdmission: 7d
+BanLogout: 7d
+MessageForPlayerToCheck: '&cJestes sprawdzany, wejdz na teamspeak ts.mctc.pl'
+BroadcastOnCheck: '&aGracz &c&l%s &ajest sprawdzany przez &c&l%s'
+BroadcastOnBan: '&cGracz &a&l%s &azostal zbanowny za &4%s'
+BroadcastClearPlayer: '&aGracz &c&l%s &azostal uznany jako czysty przez &c&l%s'
 OnLeaveBanReason: wyszedl poczas sprawdzania
-OnLeaveBanBroadcast: '&cGracz &a&l%s wyszedl i dostal bana'
+OnLeaveBanBroadcast: '&aGracz &c&l%s &awyszedl i dostal bana'
 CheckMoreCommandMessage: '&cPo wiecej /sprawdzanie'
 PlayerDoesntExistMessage: '&cGracz nie istnieje'
 PlayerAlreadyChecked: '&cGracz juz jest w trakcie sprawdzania'
 OnPlayerMove: '&c&lNie ruszaj sie podczas sprawdzania!'
-NoPermission: '&2&l[TC]&cPrzykro mi ale nie masz permisji'
+NoPermission: '&cPrzykro mi ale nie masz permisji'
 OnJailSave: '&aMiejsce wiezienia zostalo ustawione'
 OnSpawnSave: '&aMiejsce spawnu zostalo ustawione'
 PlayerNotDuringCheckMessage: '&aNiestety nie jestes podczas sprawdzania'
 AreYouSureMessage: '&aCzy na pewno chcesz sie przyznac? Wpisz jescze raz komende jesli chcesz'
-AdmissionBanReason: 'przyznal sie do cheatow i dostal bana'
+AdmissionBanReason: 'przyznanie sie do cheatow'
 AdmissionBanBroadcast: '%s przyznal sie do cheatow'
+PlayerNotDuringCheck: '&cGracz %s nie jest podczas sprawdzania'
+LineSeparator: '&c=============================='

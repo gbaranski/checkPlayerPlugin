@@ -14,14 +14,14 @@ public class CheckCommand implements CommandExecutor {
             if(player.hasPermission("checkPlayer.admin")) {
 
                 if (args.length == 0) {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c=============================="));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("LineSeparator")));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&a/sprawdz <nick>\n/czysty <nick>\n/sprawdzanie info <nick>\n/sprawdzanie lista\n/sprawdzanie setSpawn\n/sprawdzanie setJail\n/sprawdzanie autor\n/sprawdzanie reload"));
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c=============================="));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',CheckPlayerPlugin.getInstance().getConfig().getString("LineSeparator")));
                 } else {
                     switch (args[0].toLowerCase()) {
                         case "lista":
                             player.sendMessage("lista:");
-                            CheckPlayerPlugin.broadcastArrayPlayers((Player) sender);
+                            CheckPlayerPlugin.printArrayOfPlayersDuringCheck((Player) sender);
                             break;
                         case "info":
                             player.sendMessage("Niedlugo");
