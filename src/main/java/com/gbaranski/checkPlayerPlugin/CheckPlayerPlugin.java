@@ -128,6 +128,7 @@ class PrepareListener implements Listener {
             CheckPlayerPlugin.broadcastToAll(ChatColor.translateAlternateColorCodes('&',String.format(CheckPlayerPlugin.getInstance().getConfig().getString("OnLeaveBanBroadcast"), eventObject.getPlayer().getName())));
         }
     }
+    /*
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent eventObject) {
         if(CheckPlayerPlugin.checkIfPlayerInArray(eventObject.getPlayer())) {
@@ -137,4 +138,5 @@ class PrepareListener implements Listener {
                     CheckPlayerPlugin.getInstance().getConfig().getInt("jailZ")));
         }
     }
+     */
 }
